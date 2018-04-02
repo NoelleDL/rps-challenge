@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require_relative './lib/player.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -23,6 +24,16 @@ class Rps < Sinatra::Base
 
   post '/rps/play' do
     session[:choice] = params[:choice_input]
+    player = Player.new
+    player.receive_hand(params[:choice_input])
+
+    #Maybe helpful
+
+    #player.calculate_ai
+    #winner = player.compare_hands
+    #need to pass the winner to the screen then go back and start again
+    #--> session[:choice] = [params[:choice_input], winner]
+
     redirect('/rps/play')
   end
 
