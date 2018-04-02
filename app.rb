@@ -1,4 +1,5 @@
 require 'sinatra/base'
+require './lib/play.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -19,5 +20,15 @@ class Rps < Sinatra::Base
   get '/rps/game' do
     @name_input = session[:message]
     erb(:'/rps/game')
+  end
+
+  post '/rps/play' do
+    session[:choice] = params[:choice_input]
+    redirect('/rps/play')
+  end
+
+  get '/rps/play' do
+    @choice_input = session[:choice]
+    erb(:'/rps/play')
   end
 end

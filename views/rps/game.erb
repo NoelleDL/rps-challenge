@@ -1,9 +1,10 @@
 <h1><%= @name_input %></h1>
 <h2>Welcome to Rock, Paper, Scissors!</h2>
 <br><br>
-<h2>Please choose one</h2
+<h2>Please choose one</h2>
+
   <form name="choice" action="/rps/play" method="post">
-    <input type="submit" value="Rock"/>
-    <input type="submit" value="Paper"/>
-    <input type="submit" value="Scissors"/>
+    <input name='choice_input' type="submit" value="Rock" />
+    <input name='choice_input' type="submit" value="Paper" />
+    <input name='choice_input' type="submit" value="Scissors" />
   </form>
