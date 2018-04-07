@@ -22,4 +22,16 @@ feature 'play.erb' do
     click_button 'Rock'
     allow(Computer).to receive(:computer_choice) { :rock }
   end
+
+  scenario 'computer chooses paper' do
+    sign_in_and_play
+    click_button 'Rock'
+    allow(Computer).to receive(:computer_choice) { :paper }
+  end
+
+  scenario 'computer chooses scissors' do
+    sign_in_and_play
+    click_button 'Rock'
+    allow(Computer).to receive(:computer_choice) { :scissors }
+  end
 end
