@@ -1,9 +1,9 @@
 require 'computer.rb'
 
 describe Computer do
-  describe '#choice' do
+  describe '#computer_choice' do
     it 'randomly selects computer choice' do
-      expect(subject.choice).to eql('rock').or eql('paper').or eql('scissors')
+      expect(subject.computer_choice).to eql('Rock').or eql('Paper').or eql('Scissors')
     end
   end
 end

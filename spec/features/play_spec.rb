@@ -16,4 +16,11 @@ feature 'play.erb' do
     click_button 'Scissors'
     expect(page).to have_content("You chose: Scissors")
   end
+
+  scenario 'computer chooses rock' do
+    sign_in_and_play
+    click_button 'Rock'
+    expect(page).to have_content("Computer chose: Rock")
+    e("Computer chose: Paper").or have_content("Computer chose: Scissors")
+  end
 end

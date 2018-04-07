@@ -1,5 +1,6 @@
 require 'sinatra/base'
 require_relative './lib/player.rb'
+require_relative './lib/computer.rb'
 
 class Rps < Sinatra::Base
   enable :sessions
@@ -26,6 +27,8 @@ class Rps < Sinatra::Base
     session[:choice] = params[:choice_input]
     player = Player.new
     player.receive_hand(params[:choice_input])
+    computer = Computer.new
+    session[:computer_choice] = computer.computer_choice
 
     #Maybe helpful
 
@@ -38,6 +41,8 @@ class Rps < Sinatra::Base
   end
 
   get '/rps/play' do
+    @computer_choice = session[:computer_choice]
+    p @computer_choice
     @choice_input = session[:choice]
     erb(:'/rps/play')
   end
