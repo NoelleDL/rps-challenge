@@ -20,7 +20,6 @@ feature 'play.erb' do
   scenario 'computer chooses rock' do
     sign_in_and_play
     click_button 'Rock'
-    expect(page).to have_content("Computer chose: Rock")
-    e("Computer chose: Paper").or have_content("Computer chose: Scissors")
+    allow(Computer).to receive(:computer_choice) { :rock }
   end
 end

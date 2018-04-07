@@ -1,5 +1,3 @@
-require 'computer.rb'
-
 describe Computer do
   describe '#computer_choice' do
     it 'randomly selects computer choice' do

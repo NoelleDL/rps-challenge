@@ -42,7 +42,6 @@ class Rps < Sinatra::Base
 
   get '/rps/play' do
     @computer_choice = session[:computer_choice]
-    p @computer_choice
     @choice_input = session[:choice]
     erb(:'/rps/play')
   end
