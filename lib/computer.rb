@@ -1,6 +1,7 @@
 class Computer
+attr_reader :weapon
 
   def computer_choice
-    ['Rock', 'Paper', 'Scissors'].sample
+    @weapon = ['Rock', 'Paper', 'Scissors'].sample
   end
 end

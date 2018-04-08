@@ -4,4 +4,4 @@ describe Computer do
       expect(subject.computer_choice).to eql('Rock').or eql('Paper').or eql('Scissors')
     end
   end
-end
+end 
