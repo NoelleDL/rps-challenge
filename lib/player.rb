@@ -1,3 +1,5 @@
+require_relative 'computer.rb'
+
 class Player
   attr_reader :hand
 
